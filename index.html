@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Інтерактивна веб-анімація погодних явищ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section id="home" class="screen active">
+    <div class="home-bg">
+  <div class="cloud c1"></div>
+  <div class="cloud c2"></div>
+  <div class="cloud c3"></div>
+</div>
+    <h1>Інтерактивна веб-анімація погодних явищ</h1>
+    <p>Оберіть природне явище:</p>
+
+    <div class="buttons">
+        <button onclick="openWeather('rain')">Дощ</button>
+        <button onclick="openWeather('snow')">Сніг</button>
+        <button onclick="openWeather('rainbow')">Веселка</button>
+        <button onclick="openWeather('storm')">Гроза</button>
+    </div>
+
+<div class="progressPanel">
+  <div class="scoreLine">
+    <span>Ваші бали: <b id="scoreValue">0</b></span>
+    <span>Переглянуто: <b id="seenValue">0</b>/4</span>
+  </div>
+
+  <div class="progressBar">
+    <div class="progressFill" id="progressFill"></div>
+  </div>
+
+  <div class="badge" id="badgeBox" style="display:none;">
+    Досягнення: “Дослідник погоди” - ви переглянули всі явища!
+  </div>
+</div>
+
+    <button class="aboutBtn" onclick="showAbout()">Про проєкт</button>
+</section>
+
+<section id="weather" class="screen">
+    <canvas id="animation"></canvas>
+
+    <div class="info">
+        <h2 id="weatherTitle"></h2>
+        <p id="weatherFacts"></p>
+
+        <label>Інтенсивність:</label>
+        <input type="range" min="1" max="100" value="50" id="intensitySlider">
+
+        <button class="backBtn" onclick="goHome()">Назад до головного меню</button>
+    </div>
+</section>
+
+<section id="about" class="screen">
+    <div class="aboutContent">
+        <h2>Про проєкт</h2>
+
+        <p>
+            Цей проєкт створений для демонстрації погодних явищ через інтерактивні веб-анімації.
+            Користувач може обрати явище, переглянути реалістичну анімацію та дізнатися наукові факти.
+        </p>
+
+        <div class="contacts">
+            <h3>Контакти</h3>
+            <p>Email: <a href="mailto:marta.tkachuk@e-u.edu.ua">
+                marta.tkachuk@e-u.edu.ua
+            </a></p>
+        </div>
+
+        <button class="backBtn" onclick="goHome()">Назад до головного меню</button>
+    </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
